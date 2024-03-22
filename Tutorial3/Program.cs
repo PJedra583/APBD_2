@@ -1,27 +1,23 @@
 ﻿using Tutorial3;
 using Tutorial3.Containers;
 
-// var container = new Container(10.0, 15.0) 
-//     { 
-//         CargoWeight = 12.0,
-//         Height = 12.0
-//     };
-// container.CargoWeight = 10.0;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Container a = new FreezingContainer("Freezing", 2.0, 10, 1, 20, 100.4, "KON-F-1", 50.0);
+        Container b = new FreezingContainer("Freezing", 2.0, 200, 1, 20, 100.4, "KON-F-1", 50.0);
+        Container c = new GasContainer(20, 200, 15, 300, "KON-G-2", 200);
 
-int? a = 1;
-a = null;
+        Containerowiec statek = new Containerowiec(200,40);
+        Containerowiec statek2 = new Containerowiec(500, 1300);
+        statek.ZaladujKontenerowiec(a);
+        Console.WriteLine(statek.Containers.Count());
+        statek.Przenies(a,statek2);
+        Console.WriteLine("================");
+        Console.WriteLine(statek.Containers.Count());
+        Console.WriteLine(statek2.Containers.Count());
+        // statek.ZaladujKontenerowiec(b);
 
-bool? b = true;
-b = null;
-
-Exception? ex = new Exception();
-ex = null;
-
-
-// ArrayList
-List<int> numbers = new List<int>() { 1, 2, 3 };
-List<int> numbers2 = new() { 1, 3, 4};
-var numbers3 = new List<int>() { 4, 5, 6};
-
-// HashMap
-Dictionary<PossibleProducts, double> products = new();
+    }
+}
